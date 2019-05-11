@@ -40,7 +40,6 @@ export default class GetValue extends Component {
                             </CardBody>
                         </Card>
                     })
-
                 }
 
             </div>
