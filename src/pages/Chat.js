@@ -16,7 +16,9 @@ export default class Chat extends Component {
         var text = document.getElementById('text').value
 
         if (topic !== '' && text !== '') {
+            var i = 1
             var object = {
+                id: i++,
                 topic: topic,
                 text: text,
                 date: moment().format('hh:mm:ss')
@@ -27,6 +29,9 @@ export default class Chat extends Component {
             })
             document.getElementById("form").reset();
         }
+        else {
+            alert('Please Enter ...')
+        }
 
 
     }
@@ -36,12 +41,15 @@ export default class Chat extends Component {
     render() {
         return (
             <div className="container">
+                <h1 className="text-center">Hello Mars !!</h1>
                 <Form id="form" >
                     <Input type="text" placeholder="TOPIC HERE ...." id="topic" />
                     <Input type="text" placeholder="TEXT HERE ...." id="text" />
                 </Form>
                 <Button onClick={this.NewArray} color="danger">Submit</Button>
 
+                <br />
+                <br />
                 <Dashboard value={this.state.data} />
 
             </div >

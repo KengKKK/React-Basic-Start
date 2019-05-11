@@ -7,21 +7,25 @@ import {
 
 export default class Dashboard extends Component {
 
+    // state = {
+    //     data: []
+    // }
+
     state = {
         data: []
     }
 
     componentWillReceiveProps(props) {
-
         this.setState({
             data: this.state.data.concat(props.value)
         })
-
     }
 
 
 
     render() {
+
+        console.log(this.state.data)
 
         return (
             <div>
@@ -29,14 +33,15 @@ export default class Dashboard extends Component {
                     this.state.data.length > 0 &&
                     this.state.data
                         .map((data, i) => {
-                            return < Card key={i}>
+                            return <Card key={i}>
                                 <CardBody>
-                                    <CardTitle>{data.topic}</CardTitle>
+                                    <CardTitle><h1>{data.topic}</h1></CardTitle>
                                     <CardSubtitle>{data.text}</CardSubtitle>
-                                    <CardText>{data.date}</CardText>
+                                    <CardText ><span>{data.date}</span></CardText>
                                 </CardBody>
                             </Card>
                         })
+
                 }
 
             </div>
